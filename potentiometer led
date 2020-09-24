@@ -1,0 +1,16 @@
+void setup()
+{  Serial.begin(9600);
+  pinMode(9, OUTPUT);
+}
+
+void loop()
+{
+  int analogValue=analogRead(A0);
+  int brightness=map(analogValue,0,1023,0,255);
+  analogWrite(9,brightness);
+  Serial.print("\nanalog value");
+  Serial.print(analogValue);
+  Serial.print("\ndigital");
+  Serial.print(brightness);
+  delay(100);
+}
